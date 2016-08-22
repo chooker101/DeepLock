@@ -10,6 +10,7 @@ public class PlayerScript : MonoBehaviour
 	//public GameObject bullet;
 	public GameObject gun;
 	public float firerate;
+	public float lerpSpeed;
 	bool canfire = true;
 	//private int myplayer;
 
@@ -46,7 +47,7 @@ public class PlayerScript : MonoBehaviour
 		cacheTF.rotation = targetRot;
 		float yForce = GameManager.Instance.gmInputs[0].trigger1 * YSensitivity;
 		//yForce = Mathf.Lerp((cacheRB.velocity.magnitude * GameManager.Instance.gmInputs[0].move.y), yForce, Time.fixedDeltaTime);
-		cacheRB.velocity = yForce * cacheTF.up;
+		cacheRB.velocity = Vector3.Lerp(cacheRB.velocity, yForce * cacheTF.up,Time.fixedDeltaTime * lerpSpeed);
 	}
 
 	void CheckFire()

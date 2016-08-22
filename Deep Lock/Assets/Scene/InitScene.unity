@@ -272,7 +272,8 @@ MonoBehaviour:
   toTarget: {x: 0, y: 0, z: 0}
   zRotSpeed: 4
   speedForward: 5
-  nearVal: 0.02
+  angleThreshold: 0.9
+  lerpSpeed: 2
 --- !u!50 &455838590
 Rigidbody2D:
   serializedVersion: 2
@@ -280,7 +281,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 455838588}
-  m_UseAutoMass: 0
+  m_UseAutoMass: 1
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
@@ -797,6 +798,7 @@ MonoBehaviour:
   YSensitivity: 5
   gun: {fileID: 1063228191}
   firerate: 0.25
+  lerpSpeed: 2
 --- !u!212 &1642288671
 SpriteRenderer:
   m_ObjectHideFlags: 0
